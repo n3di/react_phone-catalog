@@ -1,0 +1,70 @@
+// src/app/styles/theme.scss
+// tu używasz @use, jak masz zorganizowane utils – to tylko przykład
+
+$theme-original: (
+  color-bg: #ffffff,
+  color-text: #0f0f11,
+  color-primary: #0f67ff,
+  color-secondary: #89939a,
+  color-border: #e2e6e9,
+  color-card-bg: #f9f9fb,
+  color-accent: #ffb800,
+  radius-sm: 8px,
+  radius-md: 12px,
+  radius-lg: 16px,
+);
+
+$theme-original-dark: (
+  color-bg: #0b0b0d,
+  color-text: #f5f5f7,
+  color-primary: #4d8dff,
+  color-secondary: #a0a7b0,
+  color-border: #303238,
+  color-card-bg: #15161b,
+  color-accent: #ffd666,
+  radius-sm: 8px,
+  radius-md: 12px,
+  radius-lg: 16px,
+);
+
+// Rounded Blue
+$theme-rounded-blue: (
+  color-bg: #f5f7ff,
+  color-text: #050816,
+  color-primary: #2563eb,
+  color-secondary: #64748b,
+  color-border: #cbd5f5,
+  color-card-bg: #ffffff,
+  color-accent: #38bdf8,
+  radius-sm: 16px,
+  radius-md: 24px,
+  radius-lg: 32px,
+);
+
+// Rounded Purple
+$theme-rounded-purple: (
+  color-bg: #f7f3ff,
+  color-text: #150022,
+  color-primary: #7c3aed,
+  color-secondary: #6b7280,
+  color-border: #d8c8ff,
+  color-card-bg: #ffffff,
+  color-accent: #ec4899,
+  radius-sm: 16px,
+  radius-md: 24px,
+  radius-lg: 32px,
+);
+
+// Rounded Orange
+$theme-rounded-orange: (
+  color-bg: #fff7ed,
+  color-text: #1a1305,
+  color-primary: #ea580c,
+  color-secondary: #9a8b7a,
+  color-border: #fed7aa,
+  color-card-bg: #ffffff,
+  color-accent: #f97316,
+  radius-sm: 16px,
+  radius-md: 24px,
+  radius-lg: 32px,
+);

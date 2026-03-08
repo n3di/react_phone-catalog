@@ -1,0 +1,32 @@
+@use '../../../app/styles/utils/index' as *;
+
+.iconButton {
+  border-radius: 50%;
+  border: 1px solid #B4BDC3;
+  background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+
+  &:hover {
+    border-color: $secondary;
+    background-color: $hover-BG;
+  }
+}
+
+.iconButton--md {
+  @include squared-size(40px);
+}
+
+.iconButton--sm {
+  @include squared-size(32px);
+}
+
+.iconButtonIcon {
+  width: 16px;
+  height: 16px;
+}

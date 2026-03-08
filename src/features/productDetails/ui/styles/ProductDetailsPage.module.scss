@@ -1,0 +1,195 @@
+@use '../../../../app/styles/utils/index' as *;
+
+/* ROOT */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-block: 24px 80px;
+
+  @include responsive-settings-max($media-pc) { padding-block: 24px 64px; }
+  @include responsive-settings-max($media-tablet) { padding-block: 16px 56px; gap: 16px; }
+}
+
+.topWrap {
+  position: relative;
+}
+
+.topOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+
+  display: grid;
+  place-items: center;
+
+  opacity: 0;
+  pointer-events: none; // domyślnie nie blokuje
+  transition: opacity 150ms ease;
+  background: rgba(255, 255, 255, 0.6); // lub ciemne, jak masz dark theme
+  backdrop-filter: blur(2px);
+}
+
+.topOverlay[data-active='true'] {
+  opacity: 1;
+  pointer-events: all; // blokuje kliki na Gallery/InfoPanel
+}
+
+/* BREADCRUMBS + BACK */
+.breadcrumbs {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 4px;
+}
+.breadcrumbLink {
+  @include small-text-styles; color: $primary; text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+.breadcrumbSep { @include small-text-styles; color: $secondary; }
+.breadcrumbCurrent {
+  @include small-text-styles; color: $secondary;
+  @include responsive-settings-max($media-tablet) {
+    max-width: 100%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
+  }
+}
+.back {
+  @include small-text-styles;
+  margin-top: 24px; display: inline-flex; align-items: center; gap: 8px;
+  padding: 0; border: none; background: none; color: $secondary; cursor: pointer;
+  &:hover { color: $primary; }
+  @include responsive-settings-max($media-tablet) { margin-top: 16px; }
+}
+
+/* GÓRA: layout pod Galerię + InfoPanel */
+.top {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  column-gap: 64px; row-gap: 32px; align-items: flex-start;
+
+  @include responsive-settings-max($media-pc) { column-gap: 32px; }
+  @include responsive-settings-max($media-tablet) {
+    margin-top: 16px; grid-template-columns: minmax(0, 1fr); row-gap: 24px;
+  }
+}
+
+/* separator w tej sekcji (jeśli nie masz jeszcze w tym module) */
+.lines {
+  width: 100%;
+  height: 1px;
+  background-color: #e2e6e9;
+  border: none;
+  margin: 0;
+}
+
+/* --- About + Tech specs layout --- */
+.details {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  column-gap: 64px;
+  row-gap: 32px;
+  align-items: start;
+
+  @include responsive-settings-max($media-pc) {
+    column-gap: 32px;
+  }
+
+  @include responsive-settings-max($media-tablet) {
+    margin-top: 40px;
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+}
+
+/* ABOUT kolumna (lewa) */
+.aboutCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aboutTitle {
+  @include h3-styles;
+  color: $primary;
+}
+
+.aboutBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &:first-of-type {
+    margin: 16px 0 0 0;
+  }
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 32px
+}
+
+.aboutBlockTitle {
+  @include h4-styles;
+  color: $primary;
+}
+
+.aboutText {
+  @include body-styles;
+  color: $secondary;
+  white-space: pre-line;
+}
+
+/* TECH SPECS kolumna (prawa) */
+.specsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.specsTitle {
+  @include h3-styles;
+  color: $primary;
+}
+
+.specsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 9px 0 0 0;
+}
+
+.specsRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.specsLabel {
+  font-family: Mont;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0;
+  color: $secondary;
+}
+
+.specsValue {
+  @include small-text-styles;
+  color: $primary;
+  text-align: right;
+  font-family: Mont;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0;
+  text-align: right;
+}
+
+.pageTitle {
+  font-family: Mont;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 41px;
+  letter-spacing: -1%;
+  color: hsla(241, 5%, 6%, 1);
+
+}

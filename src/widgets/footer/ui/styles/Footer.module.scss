@@ -1,0 +1,112 @@
+@use '../../../../app/styles/utils/index' as *;
+
+.footer {
+  background-color: $white;
+  box-shadow: 0 -1px 0 0 $elements;
+  margin-top: 80px;
+
+  @include responsive-settings-max($media-pc) {
+    margin-top: 64px;
+  }
+
+  @include responsive-settings-max($media-tablet) {
+    margin-top: 56px;
+  }
+}
+
+.container {
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include responsive-settings-max($media-pc) {
+    width: 592px;
+  }
+
+  @include responsive-settings-max($media-tablet) {
+    width: 288px;
+    height: 257px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 16px;
+    justify-content: space-evenly;
+  }
+}
+
+.linksContainer {
+  display: flex;
+  align-items: center;
+  width: 378px;
+  height: 11px;
+  justify-content: space-between;
+
+  @include responsive-settings-max($media-pc) {
+    width: 192px;
+  }
+
+  @include responsive-settings-max($media-tablet) {
+    flex-direction: column;
+    height: 65px;
+    align-items: flex-start;
+    width: 188px;
+  }
+}
+
+.links {
+  @include uppercase-styles;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $secondary;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.returnContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+  height: 32px;
+
+  @include responsive-settings-max($media-tablet) {
+    margin: 0 auto;
+  }
+}
+
+.return {
+  @include small-text-styles;
+
+  color: $secondary;
+}
+
+.returnButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 48px;
+  border: 1px solid $icons;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $primary;
+  }
+}
+
+.logo {
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

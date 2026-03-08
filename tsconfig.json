@@ -1,10 +1,27 @@
 {
-  "extends": "@mate-academy/students-ts-config",
-  "include": [
-    "src"
-  ],
   "compilerOptions": {
-    "sourceMap": false,
-    "types": ["node", "cypress"]
-  }
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "verbatimModuleSyntax": true,
+    "jsx": "react-jsx",
+    "noEmit": true,
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@features/*": ["src/features/*"],
+      "@shared/*": ["src/shared/*"],
+      "@widgets/*": ["src/widgets/*"]
+    },
+
+    "types": ["vite/client"]
+  },
+  "include": ["src", "vite-env.d.ts"]
 }

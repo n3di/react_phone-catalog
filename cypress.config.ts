@@ -1,14 +1,14 @@
-const { defineConfig } = require('cypress');
+// cypress.config.ts (ESM + TS)
+import { defineConfig } from 'cypress';
 
-module.exports = defineConfig({
+export default defineConfig({
   e2e: {
-    baseUrl: 'http://localhost:3000',
-    specPattern: 'cypress/integration/**/*.spec.{js,ts,jsx,tsx}',
+    baseUrl: 'http://localhost:5173', // zmień, jeśli używasz innego portu
+    specPattern: 'cypress/{e2e,integration}/**/*.{spec,cy}.{js,jsx,ts,tsx}',
+    screenshotOnRunFailure: true,
+    video: true,
   },
-  video: true,
-  viewportHeight: 1920,
-  viewportWidth: 1080,
-  screenshotOnRunFailure: true,
+
   reporter: 'mochawesome',
   reporterOptions: {
     reportDir: 'raw_reports',
@@ -16,8 +16,12 @@ module.exports = defineConfig({
     html: false,
     json: true,
   },
+
+  viewportHeight: 1920,
+  viewportWidth: 1080,
+
   component: {
-    specPattern: 'src/**/*.spec.{js,ts,jsx,tsx}',
+    specPattern: 'src/**/*.spec.{js,jsx,ts,tsx}', // jeśli faktycznie trzymasz specy w src
     devServer: {
       framework: 'react',
       bundler: 'vite',

@@ -1,0 +1,111 @@
+// src/shared/ui/Button/Button.module.scss
+@use '../../../app/styles/utils/index' as *;
+
+.button {
+  @include buttons-styles;
+
+  width: 125px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #216cff;
+  border: none;
+  color: #fff;
+  font-family: Mont, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: box-shadow .3s
+  ease-in-out;
+
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
+    transform 0.1s ease-in-out;
+
+  &:disabled {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(1px);
+    box-shadow: none;
+  }
+}
+
+/* ===== WARIANTY ===== */
+
+.primary {
+  background-color: $accent;
+  color: $white;
+
+  &:hover:not(:disabled) {
+    background-color: darken($accent, 4%);
+    box-shadow: 0 3px 13px 0 $shadow;
+  }
+}
+
+.secondary {
+  background-color: $white;
+  color: $accent;
+  border: 1px solid $elements;
+
+  &:hover:not(:disabled) {
+    border-color: $secondary;
+    background-color: $hover-BG;
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  color: $primary;
+  border: 1px solid transparent;
+
+  &:hover:not(:disabled) {
+    background-color: $hover-BG;
+    border-color: $elements;
+  }
+}
+
+.danger {
+  background-color: $red;
+  color: $white;
+
+  &:hover:not(:disabled) {
+    background-color: darken($red, 5%);
+  }
+}
+
+/* ===== ROZMIARY ===== */
+
+.sm {
+  height: 32px;
+  padding-inline: 16px;
+  font-size: 12px;
+}
+
+.md {
+  height: 40px;
+  padding-inline: 24px;
+}
+
+.lg {
+  height: 48px;
+  padding-inline: 32px;
+  font-size: 16px;
+}
+
+/* ===== DODATKI ===== */
+
+.fullWidth {
+  width: 100%;
+}
+
+.active {
+  /* np. dla toggle / selected state */
+  box-shadow: 0 0 0 2px rgba($accent, 0.2);
+}

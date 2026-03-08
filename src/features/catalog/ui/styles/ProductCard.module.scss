@@ -1,0 +1,140 @@
+// src/features/catalog/ui/ProductCard/styles/ProductCard.module.scss
+@use '../../../../app/styles/utils/index' as *;
+
+.card {
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  padding: 32px;
+  background: $white;
+  border: 1px solid $elements;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 2px 16px 0 hsla(0, 0%, 0%, 0.1);
+  }
+}
+
+.imgWrap {
+  display: block;
+  height: 196px;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.title {
+  @include body-styles;
+
+  color: $black;
+  text-decoration: none;
+  margin-top: 16px;
+  display: block;
+  height: 58px;
+}
+
+.prices {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  height: 31px
+}
+
+.price {
+  @include h3-styles;
+}
+
+.fullPrice {
+  @include body-styles;
+  position: relative;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 22px;
+  color: $secondary;
+  letter-spacing: 0;
+  line-height: 1;
+  text-decoration: line-through;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.cartButton {
+  flex: 1;
+}
+
+.divider {
+  border: solid 1px #e2e6e9;
+  width: 100%;
+  margin: 0;
+}
+
+.specs {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  gap: 8px;
+}
+
+.specRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.specLabel {
+  font-family: Mont, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0;
+  line-height: 1.2;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0;
+  color: #89939a;
+}
+
+.specValue {
+  font-family: Mont, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: 15px;
+  color: #0f0f11;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}

@@ -1,0 +1,36 @@
+.page {
+  display: grid;
+  column-gap: 16px;
+  row-gap: 40px;
+}
+
+/* mobile 4 kolumny */
+
+@media (max-width: 639px) {
+  .page {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* tablet 12 kolumn */
+
+@media (min-width: 640px) and (max-width: 1199px) {
+  .page {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+
+/* desktop 24 kolumny */
+
+@media (min-width: 1200px) {
+  .page {
+    grid-template-columns: repeat(24, minmax(0, 1fr));
+  }
+}
+
+.hero,
+.brandNew,
+.categories,
+.hot {
+  grid-column: 1 / -1; // pełna szerokość siatki
+}

@@ -1,0 +1,229 @@
+// src/widgets/header/ui/styles/Header.module.scss
+@use '../../../../app/styles/utils/index' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 64px;
+  background-color: $white;
+  box-shadow: 0 1px 0 0 $elements;
+  margin-bottom: 24px;
+
+  @include responsive-settings-max($media-pc) {
+    height: 48px;
+  }
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  height: 100%;
+
+  @include responsive-settings-max($media-pc) {
+    gap: 32px;
+  }
+}
+
+.primaryNav {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  height: 100%;
+
+  @include responsive-settings-max($media-pc) {
+    gap: 32px;
+  }
+}
+
+.secondary {
+  display: flex;
+  height: 100%;
+
+  @include responsive-settings-max($media-tablet) {
+    @include visually-hidden;
+  }
+}
+
+.logo {
+  width: 80px;
+  margin-left: 24px;
+  transition: transform 0.3s ease-in-out;
+
+  @include responsive-settings-max($media-pc) {
+    width: 64px;
+    margin-left: 16px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* PRIMARY NAV LINKS */
+
+.primaryLink {
+  @include uppercase-styles;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $secondary;
+  transition: color 0.3s ease-in-out;
+
+  @include responsive-settings-max($media-tablet) {
+    @include visually-hidden;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: $primary;
+    transform-origin: left;
+    transition: width 0.2s ease-in-out;
+    pointer-events: none;
+
+    @include responsive-settings-max($media-pc) {
+      bottom: 0;
+    }
+  }
+
+  &:hover {
+    color: $primary;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.primaryLinkActive {
+  color: $primary;
+
+  &::after {
+    width: 100%;
+  }
+}
+
+/* ICON LINKS (favorites, cart) */
+
+.iconLink {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 100%;
+  box-shadow: -1px 0 0 0 $elements;
+  transition: width 0.3s ease-in-out;
+
+  @include responsive-settings-max($media-pc) {
+    width: 48px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: $primary;
+    transform-origin: left;
+    transition: width 0.2s ease-in-out;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.iconLinkActive {
+  &::after {
+    width: 100%;
+  }
+}
+
+.iconWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: hsla(241, 5%, 6%, 1); // działa gdy svg ma fill="currentColor"
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 2px solid hsla(0, 0%, 100%, 1);
+  background: hsla(253, 78%, 46%, 1);
+  color: hsla(0, 0%, 100%, 1);
+
+  font-family: 'Mont', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 1;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BURGER */
+
+.burger {
+  @include visually-hidden;
+
+  @include responsive-settings-max($media-tablet) {
+    @include visually-visible;
+
+    display: flex;
+    height: 100%;
+  }
+}
+
+.burgerButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 100%;
+  box-shadow: -1px 0 0 0 $elements;
+  background-color: $white;
+  border: none;
+  cursor: pointer;
+}
+
+.burgerIcon {
+  width: 24px;
+  height: 24px;
+}

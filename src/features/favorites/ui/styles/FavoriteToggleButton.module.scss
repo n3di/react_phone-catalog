@@ -1,0 +1,30 @@
+@use '../../../../app/styles/utils/index' as *;
+
+.favButton {
+  border-radius: 50%;
+  border: 1px solid #B4BDC3;
+  background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+
+  &:hover {
+    border-color: $secondary;
+    background-color: $hover-BG;
+  }
+}
+
+.favButtonActive {
+  @extend .favButton;
+
+  border-color: #E2E6E9;
+}
+
+.favIcon {
+  width: 16px;
+  height: 16px;
+}

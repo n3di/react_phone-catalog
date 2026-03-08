@@ -1,0 +1,78 @@
+// src/app/styles/global.scss
+@use './utils/index' as *;
+
+:root {
+  // domyślny theme = Original
+  @include theme-vars($theme-original);
+}
+
+[data-theme='original'] {
+  @include theme-vars($theme-original);
+}
+
+[data-theme='original-dark'] {
+  @include theme-vars($theme-original-dark);
+}
+
+[data-theme='rounded-blue'] {
+  @include theme-vars($theme-rounded-blue);
+}
+
+[data-theme='rounded-purple'] {
+  @include theme-vars($theme-rounded-purple);
+}
+
+[data-theme='rounded-orange'] {
+  @include theme-vars($theme-rounded-orange);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  // żeby zniknięcie scrollbara nie zmieniało szerokości contentu
+  scrollbar-gutter: stable;
+}
+
+
+body {
+  font-family: $f-main-font;
+  background-color: $hover-BG;
+  color: $primary;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* główny wrapper aplikacji */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* <main> wypełnia przestrzeń między navbar a footerem */
+main {
+  flex-grow: 1;
+}
+
+/* linki – domyślne zachowanie */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* obrazki */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body.body--no-scroll {
+  overflow: hidden;
+}

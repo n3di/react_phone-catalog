@@ -1,0 +1,52 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.breadcrumbs {
+  display: flex;
+  gap: 8px;
+}
+
+.name {
+  position: relative;
+  top: 1px;
+  font-family: Mont;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: hsla(206, 8%, 57%, 1);
+}
+
+.title {
+  font-family: Mont;
+  font-weight: 800;
+  font-style: Bold;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -1%;
+  color: hsla(241, 5%, 6%, 1);
+}
+
+.count {
+  font-family: Mont;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0%;
+  color: hsla(206, 8%, 57%, 1);
+}
+
+.gap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

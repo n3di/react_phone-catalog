@@ -1,0 +1,35 @@
+@use '../../../../app/styles/utils/index' as *;
+
+// ...
+
+.checkoutContainer {
+  height: 206px;
+  border: 1px solid $elements;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.line {
+  height: 1px;
+  background-color: $elements;
+  width: 100%;
+  border: none;
+}
+
+.totalPrice {
+  @include h2-styles;
+  color: $primary;
+  text-align: center;
+}
+
+.total {
+  @include body-styles;
+  color: $secondary;
+  margin-top: -5px;
+  text-align: center;
+}

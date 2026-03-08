@@ -1,0 +1,64 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-family: Mont;
+  font-weight: 800;
+  font-style: Bold;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -1%;
+}
+
+.backButton {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.backText {
+  font-family: Mont;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: hsla(206, 8%, 57%, 1);
+
+  position: relative;
+  top: 1px; // ↓ przesuwasz tekst minimalnie w dół
+  // jak dalej jest za wysoko, zmień na 2px
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
